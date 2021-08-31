@@ -1,25 +1,34 @@
 
 package Modelos.Servicios;
 
+import java.io.File;
+import java.util.ArrayList;
+
 /**
  *
  * @author Emanuel Guerrero
  */
 public class Servicios {
-    protected String nombre;
-    protected  String ruta;
+    protected ArrayList<File> files = new ArrayList<>();        
     protected int precioConstruccion;
     protected  int costoMensual;
-    protected String imageRuta;
     
-    public Servicios(String nombre, String ruta, int precioConstruccion, int costoMensual) {
-        this.nombre = nombre;
-        this.ruta = ruta;
+    
+    public Servicios(int precioConstruccion, int costoMensual) {                
         this.precioConstruccion = precioConstruccion;
         this.costoMensual = costoMensual;
     }
-
-   
-    
+    public void listf(String directoryName, ArrayList<File> files) {
+    File directory = new File(directoryName);    
+    File[] fList = directory.listFiles();
+    if(fList != null)
+        for (File file : fList) {      
+            if (file.isFile()) {
+                files.add(file);
+            } else if (file.isDirectory()) {
+                listf(file.getAbsolutePath(), files);
+            }
+        }
+}
     
 }
