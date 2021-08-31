@@ -50,7 +50,8 @@ public class SesionController implements Initializable {
             }
         }
         else{            
-            try {                
+            GameController.DeserializarCiudad();
+            try {
                 switchToGame();
             } catch (IOException ex) {
                 ex.printStackTrace();
