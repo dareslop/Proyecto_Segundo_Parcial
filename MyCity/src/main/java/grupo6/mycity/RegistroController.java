@@ -27,6 +27,8 @@ public class RegistroController implements Initializable{
     private ComboBox<String> cbDificultad;
     @FXML
     private TextField txtCity;
+    @FXML
+    private Button btback;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -46,7 +48,7 @@ public class RegistroController implements Initializable{
         a.setTitle("REGISTRO EXITOSO");
         a.showAndWait();
     }
-    
+    @FXML
     private void switchToSesion() throws IOException{
         App.setRoot("Sesion");
     }
