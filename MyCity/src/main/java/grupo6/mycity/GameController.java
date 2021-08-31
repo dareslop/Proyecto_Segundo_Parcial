@@ -2,9 +2,18 @@ package grupo6.mycity;
 
 import Modelos.Ciudad;
 import Modelos.IniciarSesion;
+import Modelos.Servicios.Agua;
+import Modelos.Servicios.Calle;
+import Modelos.Servicios.Electricidad;
+import Modelos.Servicios.Escuela;
+import Modelos.Servicios.Hospital;
+import Modelos.Servicios.Parque;
+import Modelos.Servicios.Policia;
+import Modelos.Servicios.Servicios;
 import Modelos.Usuario;
 import Modelos.Vecindario;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -95,8 +104,32 @@ public class GameController implements Initializable {
         }
     public void cobrarImpuestos(){            
         }
-    public void crearServicio(){        
+    @FXML
+    public void crearServicio(){         
+        ArrayList<Servicios> servicios = new ArrayList<>();
+        servicios.add(new Agua(500,150));
+        servicios.add(new Calle(50,10));
+        servicios.add(new Electricidad(500,2000));
+        servicios.add(new Escuela(1500,150));
+        servicios.add(new Parque(1500,150));
+        servicios.add(new Policia(700,700));
+        servicios.add(new Hospital(1400,800));        
+        for(Servicios s:servicios){
+            Button b = new Button(s.toString());
+            b.setOnAction(e ->añadirServicioImg(s));
+            hboxBottom.getChildren().add(b);
+            }
         }
+    private void añadirServicioImg(Servicios s){ 
+        hboxBottom.getChildren().clear();        
+        s.listf(s.toString());
+        ArrayList<String> files = s.getFiles();
+        for(String f:files){
+            ImageView img = new ImageView(new Image(s.toString()+"//"+f,50,50,false,false));  
+            hboxBottom.getChildren().add(img);
+        }
+        
+    }
     
     @FXML
     private void mouseClicked(MouseEvent e) {
@@ -175,7 +208,7 @@ public class GameController implements Initializable {
         v.makeCoodenadas();
         System.out.println(v.getPuntos());
         for(Vecindario v2:city.getVecindarios()){
-            if(v.compareCoordenadas(v2)){
+            if(!v.compareCoordenadas(v2)){
                 city.getVecindarios().add(v);
             }
             else{
