@@ -2,23 +2,25 @@
 package Modelos;
 
 
-public class Ciudad{ 
+import Modelos.Vecindario;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+
+public class Ciudad implements Serializable{ 
+    private ArrayList<Vecindario> vecindarios = new ArrayList<>();
     private int dias;
     private int mes;
     private int presupuesto;
-    private int rows;
-    private int columns;
     private String dificultad;
-    private String floor; 
+    private String nombreCiudad;
+     
 
-    public Ciudad(String dificultad, String floor){
-        this.rows = 18;
-        this.columns = 30;
+    public Ciudad(String dificultad,String nombreCiudad){
+        this.nombreCiudad = nombreCiudad;
         this.dias = 0;
-        this.dificultad = dificultad;  
-        this.floor = floor;
-        this.mes = 0;
-        
+        this.dificultad = dificultad;        
+        this.mes = 0;        
         switch(dificultad){
             case "facil":
                 this.presupuesto = 20000;
@@ -28,6 +30,12 @@ public class Ciudad{
                 this.presupuesto = 5000;        
         }
     }  
+    
+
+    public String getNombreCiudad() {
+        return nombreCiudad;
+    }
+    
     public int getDias() {
         return dias;
     }
@@ -36,23 +44,16 @@ public class Ciudad{
     }
     public int getPresupuesto() {
         return presupuesto;
-    }
-    public int getRows() {
-        return rows;
-    }
-    public int getColumns() {
-        return columns;
-    }
+    }   
     public String getDificultad() {
         return dificultad;
-    }
-    public String getFloor() {
-        return floor;
-    }    
-    
+    }     
     public void increaseDays(){
-        dias+=1;
+        dias++;
+    }   
+
+    public ArrayList<Vecindario> getVecindarios() {
+        return vecindarios;
     }
-    
     
 }
