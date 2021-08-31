@@ -11,8 +11,10 @@ package Modelos.Servicios;
  */
 public class Hospital extends Servicios{
 
-    public Hospital(String nombre, String ruta, int precioConstruccion, int costoMensual) {
-        super(nombre, ruta, precioConstruccion, costoMensual);
+    public Hospital(int precioConstruccion, int costoMensual) {
+        super(precioConstruccion, costoMensual);
     }
+
+    
     
 }
