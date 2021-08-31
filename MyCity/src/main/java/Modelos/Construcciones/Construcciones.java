@@ -17,10 +17,6 @@ public class Construcciones {
         this.impuestoSueloMesual = impuestoSueloMesual;
         this.row = row;
         this.column = column;
-    }
-    
-
-   
-    
+    }    
     
 }
