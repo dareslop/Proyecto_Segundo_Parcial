@@ -1,0 +1,4 @@
+school.png
+school2.png
+school3.png
+school4.png

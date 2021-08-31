@@ -1,0 +1,3 @@
+industry.png
+industry2.png
+industry3.png
