@@ -5,13 +5,12 @@
  */
 package Modelos.Servicios;
 
-/**
- *
- * @author Emanuel Guerrero
- */
+
 public class Policia extends Servicios{
-    public Policia(String nombre, String ruta, int precioConstruccion, int costoMensual) {
-        super(nombre, ruta, precioConstruccion, costoMensual);
+
+    public Policia(int precioConstruccion, int costoMensual) {
+        super(precioConstruccion, costoMensual);
     }
+    
     
 }
