@@ -45,15 +45,11 @@ public class IniciarSesion {
            BufferedReader leer = new BufferedReader(new FileReader("Usuarios.txt"));
            String line;
            while((line = leer.readLine())!=null){
-               String[] sep = line.split(",");//user,pass,cityname,dificultad,file.bin
-               if(sep.length<5){
-                   usuarios.add(new Usuario(sep[0],sep[1]));               
-               }
-               else if(sep.length==5){
-                   usuarios.add(new Usuario(sep[0],sep[1],new Ciudad(sep[3],sep[2])));               
-               }
-           }
-        } catch (FileNotFoundException ex) {
+                String[] sep = line.split(",");//user,pass,cityname,dificultad,file.bin       
+                usuarios.add(new Usuario(sep[0],sep[1],new Ciudad(sep[3],sep[2])));             
+            }
+        } 
+        catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }        
         catch (IOException ex) {
