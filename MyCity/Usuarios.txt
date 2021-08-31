@@ -1,0 +1,2 @@
+Emanuel123,hola123,Guayakill,INFERNO,city_Guayakill.bin
+Darien,chao123,Quito,BABY LEVEL,null
