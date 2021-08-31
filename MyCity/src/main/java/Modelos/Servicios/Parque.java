@@ -5,14 +5,12 @@
  */
 package Modelos.Servicios;
 
-/**
- *
- * @author Emanuel Guerrero
- */
 public class Parque extends Servicios{
 
-    public Parque(String nombre, String ruta, int precioConstruccion, int costoMensual) {
-        super(nombre, ruta, precioConstruccion, costoMensual);
+    public Parque(int precioConstruccion, int costoMensual) {
+        super(precioConstruccion, costoMensual);
     }
+
+   
     
 }
