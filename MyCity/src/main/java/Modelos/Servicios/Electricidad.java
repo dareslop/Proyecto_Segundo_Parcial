@@ -11,8 +11,10 @@ package Modelos.Servicios;
  */
 public class Electricidad  extends Servicios{
 
-    public Electricidad(String nombre, String ruta, int precioConstruccion, int costoMensual) {
-        super(nombre, ruta, precioConstruccion, costoMensual);
+    public Electricidad(int precioConstruccion, int costoMensual) {
+        super(precioConstruccion, costoMensual);
     }
+
+    
     
 }
